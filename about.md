@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-Zack Witten
-[Writing](onethirdblue.wordpress.com)
+Zack Witten\n
+[Writing](onethirdblue.wordpress.com)\n
 [Github](http://github.com/zswitten)
