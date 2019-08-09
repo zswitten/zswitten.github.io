@@ -3,35 +3,40 @@ layout: post
 title:  "Neural Networks: Biological vs. Artificial (Chapters 1-3)"
 date:   2019-08-04 00:13:04 -0700
 ---
+[Part 0](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)
 
-**Chapter 1**
--  A neuron is made of long, tendrily *axons*, thick, bushy *dendrites*, and the *soma* i.e. the cell body.
-    -  Axons can be super-long. One axon can reach all the way from your head to your toe.
--  Information flows from soma to axons, into the dendrites of other cells, and then in turn to their soma.
--  Stimulus intensity corresponds to frequency of activation, not higher peak activation.
-    -  This is super-different from artificial neural networks, where greater stimulus = stronger response. The response could be unbounded (RELU) or top off at 1 (sigmoid, tanh) but there's always at least a correlation where the harder you push the neuron's buttons, the harder it'll push the buttons of the next neuron in line. In the body, if you get burned by a hotter stove, your heat-detection neurons will fire not harder, but more often.
-    -  RNNs sort of have this time-dependent quality, but a time-step in an RNN generally corresponds to a new chunk of input.
+***Neuroscience Facts/Summary***
 
-**Chapter 2: Signaling Within Neurons**
--  Neurons communicate with each other in two ways: *activation potentials* (i.e. electricity) and by sending each other proteins.
--  Sometimes proteins get shipped directly, but more often neurons will ship the RNA to make the protein.
-    -  If we think of numerical activations as proteins, shipping RNA might mean shipping a small piece of network architecture, or a set of hyperparameters that are working well or projected to work well in the future.
--  Activation potentials are all-or-nothing; they either fire or don't.
-    -  Because of this, they don't get weaker with distance, as opposed to passive electric currents.
--  Axons and dendrites are each made of *microtubules* which have a plus and minus end.
--  Within an axon, all the microtubules are lined up with their +/- ends pointing the same way (and so information only flows one way). Within dendrites, the microtubules aren't lined up so neatly.
--  Action potentials move at different speeds: 2 meters/second at the slow end, 120 meters/second on the fast end.
--  Things that make an action potential travel faster:
-    -  Wider microtubules (less resistance from the walls)
-    -  When moving through axons that are sheathed in *myelin*
+Neurons are made of three types of things:
+**Soma**, the cell body. DNA is stored here.
+**Axons**, long tendrily outcroppings that can reach all the way from your head to your toe.
+**Dendrites**, which are short and bushy and connect to the axons of neighboring neurons.
 
-**Chapter 3: Signaling Across Synapses**
--  Action potentials trigger the release of *neurotransmitters*
-    -  Quantized particles that either get released or don't.
--  Toxins that inhibit neurotransmitter communication in humans tend to also do it for animals
-    -  So a lot of the infrastructure is conserved
-    -  Humans and animals happen to make use of the exact same neurotransmitters.
--  Some neurotransmitters are excitatory, others inhibitory.
--  Neurotransmitters hang out in *vesicles*. The vesicles fuse with membranes, release their neurotransmitters, let them do their thing, and then reabsorb them.
-    -  Before that reabsorption, there's a refractory period where a neuron can't fire because it already fired too recently.
--  The whole process only works if there's a bunch of positively-charged calcium ions around.
+Axons and dendrites are both made of **microtubules**. In an axon they all point the same cardinal direction (information flows only one way). In dendrites, they can be pointing in different directions.
+
+Neurons communicate with each other in two ways: action potentials, and via sending each other proteins. In both cases, information flows from the soma to the axons, to other neurons' dendrites, and then to their soma.
+
+Sometimes neurons will ship proteins directly, but more commonly they'll ship the RNA that codes for the proteins.
+
+Action potentials are like waves of electricity that pass through a neuron and then leave it the way it was. They can move as slow as 2 meters/second or as fast as 120 meters/second. They travel faster when passing through wider microtubules (less resistance from the walls), and faster when moving through axons that are sheathed in myelin.
+
+Action potentials trigger the release of neurotransmitters. Some neurotransmitters are inhibitory, others excitatory.
+
+Neurotransmitters' default state is to be hanging out in **vesicles**. When an action potential comes, if there are a bunch of positively charged calcium ions around, the vesicles fuse with the membranes of the next cell over and release the neurotransmitter, it does its thing, then gets reabsorbed into the vesicle.
+
+Many common poisons work by inhibiting either the release of neurotransmitters, or their reabsorption. You can tell that a lot of structure for neuronal communication is conserved between humans and animal because a lot of the same toxins mess up humans and animals in the same way.
+
+***Takeaways for ML***
+1. Biological neurons are surprisingly *quantized.*
+
+Action potentials either fire, or they don't. There's no half-fire. Stimulus intensity isn't expressed in higher activation peaks, but in a faster cadence of activation. Similarly, neurotransmitters either get released or they don't. This is a huge contrast to artificial neurons where higher stimulus = higher response for all the commonly used activation functions.
+
+2. Biological neural networks use *time* to regulate their behavior.
+
+Neurons have refractory periods where they can't fire again because they've already fired too recently. And their functioning depends on the presence of calcium ions which are only sometimes around to work their magic.
+
+Some types of artificial neural networks (I'll start saying "ANNs") such as RNNs have a time-dependent quality but time generally corresponds to chunks of input, not real external time.
+
+3. Neurons send each other code.
+
+I can't think of an ANN analogue for proteins shipping each other RNA (and if you can, please tell me about it). Maybe sections of ANNs that were experiencing very high gains in accuracy given current conditions (another time-link) could send pieces of their architecture to other sections of the network who could then partially recreate them.
