@@ -39,4 +39,4 @@ Some types of artificial neural networks (I'll start saying "ANNs") such as RNNs
 
 3. Neurons send each other code.
 
-I can't think of an ANN analogue for proteins shipping each other RNA (and if you can, please tell me about it). Maybe sections of ANNs that were experiencing very high gains in accuracy given current conditions (another time-link) could send pieces of their architecture to other sections of the network who could then partially recreate them.
+I can't think of an ANN analogue for proteins shipping each other RNA (and if you can, please tell me about it). Could analogize it to neurons sending each other hyperparameters, weights, or even local architectural schema. Could also make this time-based: specific ANN sections that are experiencing very high gains in accuracy could ship whatever we decide RNA is to other parts of the network to maximally exploit the current training conditions.
