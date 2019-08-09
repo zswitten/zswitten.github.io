@@ -1,1 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:5000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5000/" rel="alternate" type="text/html" /><updated>2019-08-03T22:57:46-07:00</updated><id>http://localhost:5000/feed.xml</id><title type="html">Zack Witten</title><subtitle></subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:5000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:5000/" rel="alternate" type="text/html" /><updated>2019-08-08T23:09:56-07:00</updated><id>http://localhost:5000/feed.xml</id><title type="html">Zack Witten</title><subtitle></subtitle><entry><title type="html">Neural Networks: Biological vs. Artificial (Chapters 1-3)</title><link href="http://localhost:5000/2019/08/04/neuroscience-neural-networks-1-3.html" rel="alternate" type="text/html" title="Neural Networks: Biological vs. Artificial (Chapters 1-3)" /><published>2019-08-04T00:13:04-07:00</published><updated>2019-08-04T00:13:04-07:00</updated><id>http://localhost:5000/2019/08/04/neuroscience-neural-networks-1-3</id><content type="html" xml:base="http://localhost:5000/2019/08/04/neuroscience-neural-networks-1-3.html">&lt;p&gt;&lt;a href=&quot;https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html&quot;&gt;Part 0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Neuroscience Facts/Summary&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Neurons are made of three types of things:
+&lt;strong&gt;Soma&lt;/strong&gt;, the cell body. DNA is stored here.
+&lt;strong&gt;Axons&lt;/strong&gt;, long tendrily outcroppings that can reach all the way from your head to your toe.
+&lt;strong&gt;Dendrites&lt;/strong&gt;, which are short and bushy and connect to the axons of neighboring neurons.&lt;/p&gt;
+
+&lt;p&gt;Axons and dendrites are both made of &lt;strong&gt;microtubules&lt;/strong&gt;. In an axon they all point the same cardinal direction (information flows only one way). In dendrites, they can be pointing in different directions.&lt;/p&gt;
+
+&lt;p&gt;Neurons communicate with each other in two ways: action potentials, and via sending each other proteins. In both cases, information flows from the soma to the axons, to other neurons’ dendrites, and then to their soma.&lt;/p&gt;
+
+&lt;p&gt;Sometimes neurons will ship proteins directly, but more commonly they’ll ship the RNA that codes for the proteins.&lt;/p&gt;
+
+&lt;p&gt;Action potentials are like waves of electricity that pass through a neuron and then leave it the way it was. They can move as slow as 2 meters/second or as fast as 120 meters/second. They travel faster when passing through wider microtubules (less resistance from the walls), and faster when moving through axons that are sheathed in myelin.&lt;/p&gt;
+
+&lt;p&gt;Action potentials trigger the release of neurotransmitters. Some neurotransmitters are inhibitory, others excitatory.&lt;/p&gt;
+
+&lt;p&gt;Neurotransmitters’ default state is to be hanging out in &lt;strong&gt;vesicles&lt;/strong&gt;. When an action potential comes, if there are a bunch of positively charged calcium ions around, the vesicles fuse with the membranes of the next cell over and release the neurotransmitter, it does its thing, then gets reabsorbed into the vesicle.&lt;/p&gt;
+
+&lt;p&gt;Many common poisons work by inhibiting either the release of neurotransmitters, or their reabsorption. You can tell that a lot of structure for neuronal communication is conserved between humans and animal because a lot of the same toxins mess up humans and animals in the same way.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Takeaways for ML&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Biological neurons are surprisingly &lt;em&gt;quantized.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Action potentials either fire, or they don’t. There’s no half-fire. Stimulus intensity isn’t expressed in higher activation peaks, but in a faster cadence of activation. Similarly, neurotransmitters either get released or they don’t. This is a huge contrast to artificial neurons where higher stimulus = higher response for all the commonly used activation functions.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Biological neural networks use &lt;em&gt;time&lt;/em&gt; to regulate their behavior.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Neurons have refractory periods where they can’t fire again because they’ve already fired too recently. And their functioning depends on the presence of calcium ions which are only sometimes around to work their magic.&lt;/p&gt;
+
+&lt;p&gt;Some types of artificial neural networks (I’ll start saying “ANNs”) such as RNNs have a time-dependent quality but time generally corresponds to chunks of input, not real external time.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Neurons send each other code.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I can’t think of an ANN analogue for proteins shipping each other RNA (and if you can, please tell me about it). Maybe sections of ANNs that were experiencing very high gains in accuracy given current conditions (another time-link) could send pieces of their architecture to other sections of the network who could then partially recreate them.&lt;/p&gt;</content><author><name></name></author><summary type="html">Part 0</summary></entry><entry><title type="html">Neural Networks: Biological vs. Artificial (Intro)</title><link href="http://localhost:5000/2019/08/03/neuroscience-neural-networks-0.html" rel="alternate" type="text/html" title="Neural Networks: Biological vs. Artificial (Intro)" /><published>2019-08-03T17:46:04-07:00</published><updated>2019-08-03T17:46:04-07:00</updated><id>http://localhost:5000/2019/08/03/neuroscience-neural-networks-0</id><content type="html" xml:base="http://localhost:5000/2019/08/03/neuroscience-neural-networks-0.html">&lt;p&gt;I got curious about the simplifications and abstractions that we collectively inflicted on neurological models of the brain in order to arrive at what we today call “neural networks”. I ordered &amp;amp; am reading a textbook called &lt;a href=&quot;https://www.amazon.com/Principles-Neurobiology-Liqun-Luo/dp/0815344945/&quot;&gt;Principles of Neurobiology&lt;/a&gt;, by Liqun Luo. Below please find chapter-grouped blog posts with the facts that I found most surprising and divergent from how artificial neural networks work.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3&quot;&gt;Pt. 1&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">I got curious about the simplifications and abstractions that we collectively inflicted on neurological models of the brain in order to arrive at what we today call “neural networks”. I ordered &amp;amp; am reading a textbook called Principles of Neurobiology, by Liqun Luo. Below please find chapter-grouped blog posts with the facts that I found most surprising and divergent from how artificial neural networks work.</summary></entry></feed>
