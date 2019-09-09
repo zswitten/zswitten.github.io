@@ -4,6 +4,7 @@ title:  "Neural Networks: Biological vs. Artificial (Chapters 1-3)"
 date:   2019-08-04 00:13:04 -0700
 ---
 [Part 0](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)
+[Part 2](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)
 
 ***Neuroscience Facts/Summary***
 
