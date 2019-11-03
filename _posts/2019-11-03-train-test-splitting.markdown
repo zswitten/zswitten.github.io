@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Perils of Point-Level Train/Test Splits"
-date:   2019-08-04 00:13:04 -0700
+date:   2019-11-03 00:13:04 -0700
 ---
 
 Splitting your data into Train/Valid/Test isn't as simple as `from sklearn.model_selection import train_test_split`. When you have some data points that are really close to other data points, randomly splitting up your examples in a naive way will make you think your model is more accurate than it is. Let me give you a couple examples from personal experience.
