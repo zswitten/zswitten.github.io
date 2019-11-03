@@ -6,7 +6,7 @@ date:   2019-11-03 00:13:04 -0700
 
 Splitting your data into Train/Valid/Test isn't as simple as `from sklearn.model_selection import train_test_split`. When you have some data points that are really close to other data points, randomly splitting up your examples in a naive way will make you think your model is more accurate than it is. Let me give you a couple examples from personal experience.
 
-1. Named Entity Recognition -- Legal Documents
+Example 1: Named Entity Recognition on Legal Documents
 
 I worked for a company (http://atrium.co) that had a few thousand documents from a few hundred clients and we wanted a model that would take a document and spit out who the investor was. Used a [CRF](https://en.wikipedia.org/wiki/Conditional_random_field).
 
@@ -16,7 +16,7 @@ You'd want the model to be looking at features like PREVIOUS_WORD2=='Investor', 
 
 To get more accurate assessments of how well the model would do, the key was to split at the client level, not at the document level. If we had a bunch of documents from Client A where Investor B gave them money, they'd either all be in the training set, or all in the test set. Doing this aligned our test accuracy and our actual real-life test accuracy.
 
-2. Proteins
+Example 2: Proteins
 
 Proteins are made of amino acids. There are ~20 amino acids, so each protein is a word made from a 20-character alphabet, or if you prefer, a sentence made from a 20-word dictionary.
 
