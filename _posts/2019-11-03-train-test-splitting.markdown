@@ -22,8 +22,7 @@ Proteins are made of amino acids. There are ~20 amino acids, so each protein is 
 
 You might remember a recent Google paper/announcement called ["Using Deep Learning to Annotate the Protein Universe"](https://www.biorxiv.org/content/10.1101/626507v1.full) where they let loose the dogs of CNN on these words/sentences and learn to predict every property under the sun.
 
-This paper got preprinted in May but hasn't been published anywhere yet, and [these Twitter users](https://twitter.com/ribosaur/status/1124715703423111171) suggested a possible reason: if you check their "Rigorous Benchmark Dataset
-" section, they split the sequences into train and test randomly, but there are some sequences in the dataset that are really close to other sequences, and if they get split between train and test, then the model can just say that the "unseen" test sequence has the same properties as the super-similar train sequence that it did see. 
+This paper got preprinted in May but hasn't been published anywhere yet, and [these Twitter users](https://twitter.com/ribosaur/status/1124715703423111171) suggested a possible reason: if you check their "Rigorous Benchmark Dataset" section, they split the sequences into train and test randomly, but there are some sequences in the dataset that are really close to other sequences, and if they get split between train and test, then the model can just say that the "unseen" test sequence has the same properties as the super-similar train sequence that it did see. 
 
 [I'm not knocking the paper authors who seem like cool people//props to them for the breadth of properties they investigated//I might be misunderstanding something about their approach.]
 
