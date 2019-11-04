@@ -14,7 +14,7 @@ Early iterations of the model had validation and "test" accuracies in the high 8
 
 You'd want the model to be looking at features like PREVIOUS_WORD2=='Investor', or NEXT_WORD2=='Purchase'. But when we looked at the heaviest-weighted factors the model was considering, the top of the list was all stuff like WORD_IDENTITY=[name of specific investor]. Standard overfitting shit, curable by increasing the % of documents a word has to be in before the model considers it a true word and doesn't just throw it in the \<unk\> heap. But the interesting part is, as far as our train/test splits were concerned, it *wasn't* overfitting because [name of specific investor] appeared in the test set as well!
 
-To get more accurate assessments of how well the model would do, the key was to split at the client level, not at the document level. If we had a bunch of documents from Client A all of which involve the same investor, they'd either all be in the training set, or all in the test set. Doing this aligned our test accuracy and our actual real-life test accuracy.
+To get more accurate assessments of how well the model would do, the key was to split at the client level, not at the document level. If we had a bunch of documents from some client, all of which involve the same investor, they'd either all be in the training set, or all in the test set. Doing this aligned our test accuracy and our actual real-life test accuracy.
 
 **Example 2: Proteins**
 
