@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Neural Networks: Biological vs. Artificial (Chapters 1-3)"
+title:  "Chapter 6: Olfaction, Taste, Audition, and Somatosensation"
 date:   2019-11-12 23:45:00 -0700
 ---
 
