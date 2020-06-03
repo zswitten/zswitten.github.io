@@ -17,7 +17,7 @@ First, let's talk about how the basic shape of the brain gets made. A sperm fert
 
 Next, on the tube, forward/backward and up/down axes get defined. The way this works is, there are proteins called "morphogens" [short for mighty morphing power generators] that are produced at specific places on the tube. The morphogens spread out from their sources, creating a gradient: the closer a cell is to a morphogen factory, the more morphogen a cell gets. The morphogens control how active various genes are in a cell, and that determines its "cell fate", i.e. what type of cell it becomes.
 
-Keep in mind this is all happening before the cells have started extending their axons and dendrites to communicate with each other. They have to get their own shit figured out first. In particular, they are deciding whether they will be excitatory, inhibitory, or modulatory, and what neurotransmitter they're going to use.
+Keep in mind this is all happening before the cells have started extending their axons and dendrites to communicate with each other. They have to get their own act together first. In particular, they are deciding whether they will be excitatory, inhibitory, or modulatory, and what neurotransmitter they're going to use.
 
 But even though they aren't directly communicating with each other, their fates are intertwined. For instance, each Drosophila (fruit fly) (my biology-knowledgable friends keep yelling at me for calling it "Drosophilia") sensory organ is supposed to have one socket cell, one hair cell, one sheath cell, and one sensory neuron. If the organ doesn't have all those things, it doesn't work, so it's important for nearby cells to coordinate their cell fate decisions.
 
