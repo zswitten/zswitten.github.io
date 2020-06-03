@@ -4,11 +4,11 @@ title:  "Chapter 6: Olfaction, Taste, Audition, and Somatosensation"
 date:   2019-11-12 23:45:00 -0700
 ---
 
-[Part 0: Introduction](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)\
-[Part 1-3: Properties of Neurons](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)\
-[Part 4: Vision](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)\
-[Part 5: Wiring of the Visual System](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)\
-[Part 6: Smell, Taste, Hearing, and Touch](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)\
+[Part 0: Introduction](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)  
+[Part 1-3: Properties of Neurons](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)  
+[Part 4: Vision](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)  
+[Part 5: Wiring of the Visual System](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)  
+[Part 6: Smell, Taste, Hearing, and Touch](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)  
 [Part 7: Wiring of the Nervous System](https://zswitten.github.io/2020/06/03/neuroscience-neural-networks-7.html)
 
 This chapter is about the senses: how our bodies notice things that are happening around us. The inputs vary a lot: sound, heat, food. It all gets turned into electrical signals and then sent to the brain. Let's run down the senses.
