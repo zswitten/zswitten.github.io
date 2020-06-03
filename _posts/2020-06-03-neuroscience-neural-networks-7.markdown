@@ -4,11 +4,11 @@ title:  "Chapter 7: Wiring of the Nervous System"
 date:   2020-06-03 10:45:00 -0700
 ---
 
-[Part 0: Introduction](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)\
-[Part 1-3: Properties of Neurons](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)\
-[Part 4: Vision](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)\
-[Part 5: Wiring of the Visual System](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)\
-[Part 6: Smell, Taste, Hearing, and Touch](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)\
+[Part 0: Introduction](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)  
+[Part 1-3: Properties of Neurons](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)  
+[Part 4: Vision](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)  
+[Part 5: Wiring of the Visual System](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)  
+[Part 6: Smell, Taste, Hearing, and Touch](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)  
 [Part 7: Wiring of the Nervous System](https://zswitten.github.io/2020/06/03/neuroscience-neural-networks-7.html)
 
 We have billions of neurons. And 10^14 connections between those neurons. But our instruction manual for putting it together is a mere 20,000 genes. How do all the neurons know what other neurons they're supposed to connect to?
