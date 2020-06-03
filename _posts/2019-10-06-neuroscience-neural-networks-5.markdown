@@ -4,8 +4,16 @@ title:  "Chapter 5: Wiring of the Visual System"
 date:   2019-10-06 21:46:04 -0700
 ---
 [Part 0](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)
-[Part 1](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)
-[Part 2](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)
+
+[Part 1-3](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)
+ 
+[Part 4](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)
+
+[Part 5](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)
+
+[Part 6](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)
+
+[Part 7](https://zswitten.github.io/2020/06/03/neuroscience-neural-networks-7.html)
 
 Gonna try skipping the bullet point system for this one and write it more conversationally.
 
@@ -36,6 +44,7 @@ The general rule that is driving this learned wiring is Hebbs' Rule: neurons tha
 We see this firing-together in so-called *retinal waves* that occur in humans' early developmental period, which are NOT driven by visual input, but happen spontaneously. Remember, the ephrin stuff just gets the axons to the right general region. Nearby RGC cells fire correlatedly which "teaches" the downstream neurons which inbound connections are correlated. A couple analogies that come to mind:
 
 -A bunch of cords from laptop, monitors, keyboard, mouse, etc. are stuffed together through a small hole in a desk. The ephrins make sure the tangle goes through the right hole. At the other end, retinal waves help sort out which wires correspond to which device.
+
 -A conductor, preparing for a symphony, gestures to the different sections of their orchestra to get a sense of the tone coming from each section.
 
 At a chemical level, Hebbs' Rule is enforced via *NMDAs* which bind to glutamate from presynaptic neurons, but only when postsynaptic neurons are also firing/depolarized which removes a magnesium blockage that was stopping the glutamate from being recepted (not a real word).

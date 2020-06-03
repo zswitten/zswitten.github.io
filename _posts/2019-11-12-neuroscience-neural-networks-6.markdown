@@ -4,6 +4,18 @@ title:  "Chapter 6: Olfaction, Taste, Audition, and Somatosensation"
 date:   2019-11-12 23:45:00 -0700
 ---
 
+[Part 0](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)
+
+[Part 1-3](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)
+ 
+[Part 4](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)
+
+[Part 5](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)
+
+[Part 6](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)
+
+[Part 7](https://zswitten.github.io/2020/06/03/neuroscience-neural-networks-7.html)
+
 This chapter is about the senses: how our bodies notice things that are happening around us. The inputs vary a lot: sound, heat, food. It all gets turned into electrical signals and then sent to the brain. Let's run down the senses.
 
 ***Smell***
@@ -70,6 +82,7 @@ Then you have the nociceptive neurons, which sense pain. Things ("modalities") t
 A cousin of pain is itch. As with the taste receptor/cell distinction, transferring a receptor to a different cell also transforms the sensation when the receptor is triggered.
 
 ***Some ML Takeaways***
+
 The senses in this chapter have themes of modularity and reuse of components. The plug-and-play nature of the taste receptors and pain/itch receptors could be analogized to the way that two NNs trying to do very different tasks might both use some common layer architectures like a convolutional layer.
 
 Information flow between the brain and the senses is a two-way dialogue. For instance, all our senses get turned way down when we are drowsy/sleeping.
