@@ -3,17 +3,12 @@ layout: post
 title:  "Chapter 5: Wiring of the Visual System"
 date:   2019-10-06 21:46:04 -0700
 ---
-[Part 0](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)
-
-[Part 1-3](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)
- 
-[Part 4](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)
-
-[Part 5](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)
-
-[Part 6](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)
-
-[Part 7](https://zswitten.github.io/2020/06/03/neuroscience-neural-networks-7.html)
+[Part 0: Introduction](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-0.html)\
+[Part 1-3: Properties of Neurons](https://zswitten.github.io/2019/08/04/neuroscience-neural-networks-1-3.html)\
+[Part 4: Vision](https://zswitten.github.io/2019/09/08/neuroscience-neural-networks-4.html)\
+[Part 5: Wiring of the Visual System](https://zswitten.github.io/2019/10/07/neuroscience-neural-networks-5.html)\
+[Part 6: Smell, Taste, Hearing, and Touch](https://zswitten.github.io/2019/11/13/neuroscience-neural-networks-6.html)\
+[Part 7: Wiring of the Nervous System](https://zswitten.github.io/2020/06/03/neuroscience-neural-networks-7.html)
 
 Gonna try skipping the bullet point system for this one and write it more conversationally.
 
