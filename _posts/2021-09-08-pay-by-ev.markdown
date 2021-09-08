@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "In-Person Stores Should Offer Credit Card Roulette"
+date:   2021-09-08 00:13:04 -0700
+---
+
+No one likes waiting in line to check out. In this blog post I'll propose a dream store where you only have to wait in line 1/10th of the time. Or 1/100th of the time. You choose.
+
+The idea is simple: right before you pay, you select an N, then some random number generator picks a random number from 1 to N. If the random number is N, you pay a multiple of N times your bill. Otherwise, you can waltz right out of the store with your loot.
+
+The beauty of this system is that if there's someone who doesn't want the variance, they can just choose N=1 and pay the full bill 100% of the time like usual.
+
+Gamers may recognize this as EV-weighted [Credit Card Roulette](https://en.wikipedia.org/wiki/Credit_card_roulette) applied to normal shopping. But while that's mostly just mindless gambling, this is actually a serious time-saving device.
+
+*Implementation Details*
+The two biggest things are:
+
+- You have to make people preregister what they want to buy before they choose N. Otherwise people will take stuff out of their cart when they lose.
+- You have to put a limit on N to make sure people can actually pay up when they lose. Ideally this limit would vary by shopper in proportion to their bank account.
+
+So maybe stores set up little pods. You enter with your cart, it locks you in, you swipe your card and get told your max N, you pick your N and roll, and if you lose, someone comes over to check you out, otherwise the doors open and you're free to go.
+
+*How much time would this save?*
+[This article](https://stories.swns.com/news/wait-in-line-nearly-a-year-of-our-life-is-spent-in-queues-24514/) says we spend 29 minutes a week in line at the grocery store. Let's say everyone picks N=5. Then we're talking 23 minutes of saving per week * 52 weeks = 20 hours a year per person. Factor in other purchasing sites like clothes and gas and I think it could be 1 day a year.
