@@ -13,6 +13,7 @@ The beauty of this system is that if there's someone who doesn't want the varian
 Gamers may recognize this as EV-weighted [Credit Card Roulette](https://en.wikipedia.org/wiki/Credit_card_roulette) applied to normal shopping. But while that's mostly just mindless gambling, this is actually a serious time-saving device.
 
 **Implementation Details**
+
 The two biggest things are:
 
 - You have to make people preregister what they want to buy before they choose N. Otherwise people will take stuff out of their cart when they lose.
@@ -21,4 +22,5 @@ The two biggest things are:
 So maybe stores set up little pods. You enter with your cart, it locks you in, you swipe your card and get told your max N, you pick your N and roll, and if you lose, someone comes over to check you out, otherwise the doors open and you're free to go.
 
 **How much time would this save?**
+
 [This article](https://stories.swns.com/news/wait-in-line-nearly-a-year-of-our-life-is-spent-in-queues-24514/) says we spend 29 minutes a week in line at the grocery store. Let's say everyone picks N=5. Then we're talking 23 minutes of saving per week * 52 weeks = 20 hours a year per person. Factor in other purchasing sites like clothes and gas and I think it could be 1 day a year.
