@@ -4,10 +4,11 @@ title:  "Data as an Undersupplied Public Good"
 date:   2022-04-14 00:40:04 -0700
 ---
 
-*Summary*
+## Summary
 The most valuable data in the world is public. Stuff like Wikipedia and Github. So it's underfunded, like all public goods. And it's even more underfunded because its value is hard to measure. Finding cheap ways to measure the incremental effects of a dataset would let us reward dataset creators and unlock massive value.
 
-*Data as a public good // The best things in life are free*
+## Data as a public good
+**The best things in life are free**
 
 What makes data valuable? Data is valuable because it makes an ML model do better on some task. For private data, this can be estimated by companys' willingness to pay. For instance, your browsing/shopping habits are [allegedly](https://www.invisibly.com/learn-blog/how-much-is-data-worth) worth about $65/year/person because they improve the performance of a what-ads-are-worth-showing-to-you model.
 
@@ -24,7 +25,8 @@ Wikipedia isn't going to see a penny of that, though, unless their yearly donati
 
 Because of this lack of ownership and attribution, economic theory tells us that large public datasets are *massively underproduced*. To produce the socially optimal amount of data, every time you write a Wikipedia entry or write an answer on Stack Overflow, you should earn royalties equal to the expected improvement of all the models trained on what you wrote, multiplied by the value of that improvement to all the users of those models.
 
-*Measuring the impact of a dataset // Data Nutrition*
+## Measuring the impact of a dataset
+**Your calorie values may be higher or lower depending on your data needs**
 
 How should we think about the value of an individual Wikipedia entry, or of the Wikipedia corpus as a whole?
 
@@ -42,7 +44,8 @@ Another approach to measuring the contribution of small portions of a dataset wo
 
 Food you buy in a store usually comes with a label for Nutrition Facts: how many calories, how much sodium, protein, niacin it has. In this world, datasets would have labels showing how much they contribute to model performance on various tasks. We would talk about information-rich datasets the way we talk about spinach being high in fiber.
 
-*Solving the data shortage*
+## Solving the data shortage
+**Hm maybe that would have made a clickbaitier/catchier title**
 
 What would the world look like if datasets had reliable nutrition facts, and model providers like OpenAI paid out royalties to data providers each time they served an inference proportional to the nutrition of the data?
 
@@ -58,9 +61,10 @@ How might we bring this world about?
 
 1. Developing powerful, cheap methods for measuring data nutrition would on its own provide model providers with strong incentive to purchase more data on purely selfish grounds. They already do this (Facebook spends tens of millions each year paying people to label data; Google has us all doing Captchas all the time; OpenAI pays Turkers to help with their reinforcement learning projects). This would be more incentive for them to do more of what they're already going.
 
-2. The legal system could be brought to bear, mandating the payment of data royalties. This would have a stronger stimulative effect on data production but would also 
+2. The legal system could be brought to bear, mandating the payment of data royalties. This would have a stronger stimulative effect on data production but would be difficult to enforce. In particular, model distillation (the training of one model on the outputs of another model) presents a problem for enforcement, as this occludes the value of whatever data was used to train the original model. The bet would be that the biggest companies are both the most important targets and the easiest targets.
 
-*Notes // Arguments from Authority*
+## Notes
+**(Arguments from Authority)**
 
 - [Chinchilla paper](https://arxiv.org/pdf/2203.15556.pdf), showing that at current margins models benefit more from extra data than extra size
 - Andrew Ng: "So for many practical applications, it’s now more productive to hold the neural network architecture fixed, and instead find ways to improve the data... This is the time to take the things that some individuals have been doing intuitively and make it a systematic engineering discipline." [Link](https://spectrum.ieee.org/andrew-ng-data-centric-ai)
