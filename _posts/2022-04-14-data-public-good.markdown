@@ -12,7 +12,7 @@ The most valuable data in the world is public. Stuff like Wikipedia and Github. 
 
 What makes data valuable? Data is valuable because it makes an ML model do better on some task. For private data, this can be estimated by companys' willingness to pay. For instance, your browsing/shopping habits are [allegedly](https://www.invisibly.com/learn-blog/how-much-is-data-worth) worth about $65/year/person because they improve the performance of a what-ads-are-worth-showing-to-you model.
 
-But the most valuable data in the world, the data that powers the biggest, best, models, is *completely public*.
+But these days most valuable data in the world, the data that powers the biggest, best, models, is *completely public*.
 
 - [OpenAI Codex](https://openai.com/blog/openai-codex/), which powers [Copilot](https://copilot.github.com/), is trained on publicly available source code from Github. Codex can already [write video games](https://andrewmayneblog.wordpress.com/2022/03/17/building-games-and-apps-entirely-through-natural-language-using-openais-davinci-code-model/) essentially from scratch and already has many devotees who say it makes their work faster and better.
 - [Alphafold](https://www.deepmind.com/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology), which can replicate an entire PhD's worth of work finding the structure of a protein with one inference call, is trained on publicly available data from the [Protein Data Bank](https://www.rcsb.org/).
@@ -24,6 +24,10 @@ GPT-3 and Copilot are already earning income, gating access to their models thro
 Wikipedia isn't going to see a penny of that, though, unless their yearly donation pledge headers happen to catch Sam Altman in a generous mood. But of course it's not only Wikipedia the organization who is providing the value here. A lot (most?) of the value of Wikipedia qua dataset was created by the people who wrote the entries.
 
 Because of this lack of ownership and attribution, economic theory tells us that large public datasets are *massively underproduced*. To produce the socially optimal amount of data, every time you write a Wikipedia entry or write an answer on Stack Overflow, you should earn royalties equal to the expected improvement of all the models trained on what you wrote, multiplied by the value of that improvement to all the users of those models.
+
+Aside from being underproduced, data is also tragically *undershared*. I know a biologist who's into ML who got fed up with trying to get the data in a paper by email and wrote an image-processing script to scrape it directly from the pixels of the tables in the PDF. In general academics have little incentive to share their data. It can be a lot of work and there's not much in it for them. People talk about this in terms of the "replication crisis" but it also slows down new work.
+
+The creators of ImageNet [almost gave up](https://qz.com/1034972/the-data-that-changed-the-direction-of-ai-research-and-possibly-the-world/) because they didn't have the budget to pay undergrads to label it. Only the existence of Amazon Mechanical Turk allowed the project to be completed. In retrospect, given how much ImageNet galvanized the field of computer vision, it clearly would have been worth creating ImageNet even if the professors had to label it all themselves. Imagine if someone had the foresight to subsidize its creation earlier.
 
 ## Measuring the impact of a dataset
 **Your calorie values may be higher or lower depending on your data needs**
@@ -38,9 +42,13 @@ There is another problem as well: even if we could perfectly measure the contrib
 
 I'd argue that the uncertainty of that translation can be ignored as a form of "ML luck" akin to "moral luck" -- if the magical perplexity threshold is 50, your data brings it halfway from 60 to 50, and then later mine brings it the other half, and causes a phase change, we both deserve the same reward.
 
-Let's leave that complication aside and pretend that test set impact = real world impact. One way to approximate the contribution of some subset of (e.g.) Wikipedia on GPT's performance is to do ablations with progressively less tiny versions of GPT. Hopefully there would be decent correlation between contribution to 1e9-scale GPT, 1e8-scale GPT, and 1e7-scale GPT which would give us confidence that the same would hold for full-scale GPT.
+Let's leave that complication aside and pretend that test set impact = real world impact. Here's three possible strategies to approximate the impact of a given subset of data.
 
-Another approach to measuring the contribution of small portions of a dataset would be to model it directly. You could amass a dataset where the samples are (dataset, supplemental data) pairs, and the labels are the improvement of a menagerie of models when trained on dataset + supplemental dataset compared to without the supplemental dataset. Or, rather than (dataset, supplemental pair), you could use (parametrized model, supplemental dataset), and the label would be the improvement in performance for that specific model.
+1. Do ablations with small versions of the model. Hopefully data valuable to small versions would also be valuable to big versions. We could build confidence in this via scaling laws: correlation between contribution to 1e9-scale GPT, 1e8-scale GPT, and 1e7-scale GPT would give us confidence that the same data would be valuable to full-scale GPT.
+
+2. Model it directly. Amass a dataset where the samples are [dataset, supplemental data] pairs, and the labels are the improvement of a model (or a menagerie of models) when trained on [dataset + supplemental data] compared to [dataset] alone. Or, rather than (dataset, supplemental pair), you could use (parametrized model, supplemental dataset), and the label would be the improvement in performance for that specific model.
+
+3. "Untrain" the model on the data using gradient ascent. It makes intuitive sense that moving away from good performance on important data would hurt performance more than for unimportant data. A nice feature of this approach is that the cost is exactly 2x the cost of training (plus the cost of inferences on the test set). Untrain on a subset, measure, then restore the model to checkpoint before untraining on the next subset until it's unseen everything once. This one is hilariously naive but maybe just naive enough to work and I would love to see someone try it.
 
 Food you buy in a store usually comes with a label for Nutrition Facts: how many calories, how much sodium, protein, niacin it has. In this world, datasets would have labels showing how much they contribute to model performance on various tasks. We would talk about information-rich datasets the way we talk about spinach being high in fiber.
 
@@ -57,11 +65,12 @@ And some other consequences that make the picture less rosy:
 
 4. Whatever method we choose for measuring data nutrition will be heavily analyzed and gamed. An arms race will develop as it's only a matter of time before each imperfect metric gets [Goodharted](https://en.wikipedia.org/wiki/Goodhart%27s_law) to death. Some model providers may keep their valuation methods secret to prevent this, publishing only their total payouts or not even that.
 
-How might we bring this world about?
+Developing powerful, cheap methods for measuring data nutrition would on its own provide model providers with strong incentive to purchase more data on purely selfish grounds. They already do this (Facebook spends tens of millions each year paying people to label data; Google has us all doing Captchas all the time; OpenAI pays Turkers to help with their reinforcement learning projects). This would be more incentive for them to do more of what they're already going.
 
-1. Developing powerful, cheap methods for measuring data nutrition would on its own provide model providers with strong incentive to purchase more data on purely selfish grounds. They already do this (Facebook spends tens of millions each year paying people to label data; Google has us all doing Captchas all the time; OpenAI pays Turkers to help with their reinforcement learning projects). This would be more incentive for them to do more of what they're already going.
+The legal system could be brought to bear, mandating the payment of "data royalties". This would have a strong stimulative effect on data production but would be difficult to enforce. In particular, model distillation (the training of one model on the outputs of another model) presents a problem for enforcement, as this occludes the value of whatever data was used to train the original model. The bet would be that the biggest companies are both the most important targets and the easiest targets.
 
-2. The legal system could be brought to bear, mandating the payment of data royalties. This would have a stronger stimulative effect on data production but would be difficult to enforce. In particular, model distillation (the training of one model on the outputs of another model) presents a problem for enforcement, as this occludes the value of whatever data was used to train the original model. The bet would be that the biggest companies are both the most important targets and the easiest targets.
+One strategy for enforcement would be for dataset owners to spot-check generative language models with prompts from their dataset. If the model has "memorized" the continuation, returning the ground truth with high confidence, that's evidence the model saw it during training. This is a sort of white-hat version of getting GPT-2 to [divulge people's phone numbers](https://bair.berkeley.edu/blog/2020/12/20/lmmem/). Instead of extracting people's personal information from the model, you'd extract the model's information from itself.
+
 
 ## Notes
 **(Arguments from Authority)**
