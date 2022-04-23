@@ -5,7 +5,7 @@ date:   2022-04-14 00:40:04 -0700
 ---
 
 ## Summary
-The most valuable data in the world is public. Stuff like Wikipedia and Github. So it's underfunded, like all public goods. And it's even more underfunded because its value is hard to measure. Finding cheap ways to measure the incremental effects of a dataset would let us reward dataset creators and unlock massive value.
+The most valuable data in the world is public. Stuff like Wikipedia and Github. Like all public goods, data is therefore *underfunded*. The classic solution to a public goods problem is to subsidize production... but the value of data is hard to measure. Finding ways to measure the incremental effects of a dataset would let us reward dataset creators and unlock massive value.
 
 ## Data as a public good
 **The best things in life are free**
@@ -25,9 +25,15 @@ Wikipedia isn't going to see a penny of that, though, unless their yearly donati
 
 Because of this lack of ownership and attribution, economic theory tells us that large public datasets are *massively underproduced*. To produce the socially optimal amount of data, every time you write a Wikipedia entry or write an answer on Stack Overflow, you should earn royalties equal to the expected improvement of all the models trained on what you wrote, multiplied by the value of that improvement to all the users of those models.
 
+Recently Facebook paid 931 people to [record video](https://ego4d-data.org/) of themselves going about their daily lives, ending up with 3,670 hours of video, which was then painstakingly annotated with details about what they were doing, who was talking to/looking at them, what everyone was saying, bounding boxes for hands (hands always trip up generative art models for some reason), etc. This is the exact kind of thing we need more of... but honestly, 4k hours of video is still small potatoes! 
+
+Bold-ish claim: If we fully and completely rewarded people for contributing to the data commons, unemployment would be promptly decimated. Almost anyone in the world is capable of strapping a video to their head and narrating their actions as they walk around, and the present and future benefits to AI more than pay for the cost of their time and shipping them the equipment.
+
 Aside from being underproduced, data is also tragically *undershared*. I know a biologist who's into ML who got fed up with trying to get the data in a paper by email and wrote an image-processing script to scrape it directly from the pixels of the tables in the PDF. In general academics have little incentive to share their data. It can be a lot of work and there's not much in it for them. People talk about this in terms of the "replication crisis" but it also slows down new work.
 
 The creators of ImageNet [almost gave up](https://qz.com/1034972/the-data-that-changed-the-direction-of-ai-research-and-possibly-the-world/) because they didn't have the budget to pay undergrads to label it. Only the existence of Amazon Mechanical Turk allowed the project to be completed. In retrospect, given how much ImageNet galvanized the field of computer vision, it clearly would have been worth creating ImageNet even if the professors had to label it all themselves. Imagine if someone had the foresight to subsidize its creation earlier.
+
+From large unsupervised datasets to smaller hyperspecialized datasets, it's clear that for all the talk about big data, we actually have significantly less data than we "should". Solving this problem is difficult, because not all data is created equal. For example, it's easy to create a massive, valueless, dataset by telling your computer to print out a bunch of zeroes and ones in a random order. Or to record hundreds of hours of video of your motionless couch. If we are going to scale up dataset creation in a big way, we need ways to measure the value of what we incentivize and create. The next section will talk about how we might do that.
 
 ## Measuring the impact of a dataset
 **Your calorie values may be higher or lower depending on your data needs**
@@ -65,7 +71,7 @@ And some other consequences that make the picture less rosy:
 
 4. Whatever method we choose for measuring data nutrition will be heavily analyzed and gamed. An arms race will develop as it's only a matter of time before each imperfect metric gets [Goodharted](https://en.wikipedia.org/wiki/Goodhart%27s_law) to death. Some model providers may keep their valuation methods secret to prevent this, publishing only their total payouts or not even that.
 
-Developing powerful, cheap methods for measuring data nutrition would on its own provide model providers with strong incentive to purchase more data on purely selfish grounds. They already do this (Facebook spends tens of millions each year paying people to label data; Google has us all doing Captchas all the time; OpenAI pays Turkers to help with their reinforcement learning projects). This would be more incentive for them to do more of what they're already going.
+Developing accurate, cheap methods for measuring data nutrition would induce the big tech companies to spend more data on purely selfish grounds. They already do this (Meta spends tens of millions each year paying people to label Facebook posts even aside from the ego4d stuff; Google has us all doing Captchas all the time; OpenAI pays Turkers to help with their reinforcement learning projects). This would be more incentive for them to do more of what they're already going.
 
 The legal system could be brought to bear, mandating the payment of "data royalties". This would have a strong stimulative effect on data production but would be difficult to enforce. In particular, model distillation (the training of one model on the outputs of another model) presents a problem for enforcement, as this occludes the value of whatever data was used to train the original model. The bet would be that the biggest companies are both the most important targets and the easiest targets.
 
