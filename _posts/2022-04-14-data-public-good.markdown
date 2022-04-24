@@ -69,13 +69,13 @@ What would the world look like if datasets had reliable nutrition facts, and mod
 
 There are also some challenges:
 
-1. Enforcement
+- Enforcement
 
 The legal system could be brought to bear, mandating the payment of "data royalties". This would have a strong stimulative effect on data production but would be difficult to enforce. In particular, model distillation (the training of one model on the outputs of another model) presents a problem for enforcement, as this occludes the value of whatever data was used to train the original model. The bet would be that the biggest companies are both the most important targets and the easiest targets.
 
 One strategy for enforcement would be for dataset owners to spot-check generative language models with prompts from their dataset. If the model has "memorized" the continuation, returning the ground truth with high confidence, that's evidence the model saw it during training. This is a sort of white-hat version of getting GPT-2 to [divulge people's phone numbers](https://bair.berkeley.edu/blog/2020/12/20/lmmem/). Instead of extracting people's personal information from the model, you'd extract the model's information from itself.
 
-2. [Goodhart](https://en.wikipedia.org/wiki/Goodhart%27s_law)
+- [Goodhart](https://en.wikipedia.org/wiki/Goodhart%27s_law)
 
 Whatever method we choose for measuring data nutrition will be heavily analyzed and gamed. An arms race will develop as people find new loopholes in the measurement system. Some model providers may keep their valuation methods secret to prevent this, as Google keeps its ranking algorithm private to stop shady SEO tactics, publishing only their total payouts or not even that.
 
