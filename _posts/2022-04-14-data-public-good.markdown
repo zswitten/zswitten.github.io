@@ -27,7 +27,7 @@ Because of this lack of ownership and attribution, economic theory tells us that
 
 Recently Facebook paid 931 people to [record video](https://ego4d-data.org/) of themselves going about their daily lives, ending up with 3,670 hours of video, which was then painstakingly annotated with details about what they were doing, who was talking to/looking at them, what everyone was saying, bounding boxes for hands (hands always trip up generative art models for some reason), etc. This is the exact kind of thing we need more of... but honestly, 4k hours of video is still small potatoes! 
 
-Bold-ish claim: If we fully and completely rewarded people for contributing to the data commons, unemployment would be promptly decimated. Almost anyone in the world is capable of strapping a video to their head and narrating their actions as they walk around, and the present and future benefits to AI more than pay for the cost of their time and shipping them the equipment.
+A nice side benefit of fully and completely rewarding people for contributing to the data commons would be the prompt decimation of unemployment. Almost anyone in the world is capable of strapping a video to their head and narrating their actions as they walk around, and the present and future benefits to AI more than pay for the cost of their time and shipping them the equipment.
 
 Aside from being underproduced, data is also tragically *undershared*. I know a biologist who's into ML who got fed up with trying to get the data in a paper by email and wrote an image-processing script to scrape it directly from the pixels of the tables in the PDF. In general academics have little incentive to share their data. It can be a lot of work and there's not much in it for them. People talk about this in terms of the "replication crisis" but it also slows down new work.
 
@@ -54,7 +54,7 @@ Let's leave that complication aside and pretend that test set impact = real worl
 
 2. Model it directly. Amass a dataset where the samples are [dataset, supplemental data] pairs, and the labels are the improvement of a model (or a menagerie of models) when trained on [dataset + supplemental data] compared to [dataset] alone. Or, rather than (dataset, supplemental pair), you could use (parametrized model, supplemental dataset), and the label would be the improvement in performance for that specific model.
 
-3. "Untrain" the model on the data using gradient ascent. It makes intuitive sense that moving away from good performance on important data would hurt performance more than for unimportant data. A nice feature of this approach is that the cost is exactly 2x the cost of training (plus the cost of inferences on the test set). Untrain on a subset, measure, then restore the model to checkpoint before untraining on the next subset until it's unseen everything once. This one is hilariously naive but maybe just naive enough to work and I would love to see someone try it.
+3. "Untrain" the model on the data using gradient ascent. It makes intuitive sense that moving away from good performance on important data would hurt performance more than for unimportant data. A nice feature of this approach is that the cost is exactly 2x the cost of training (plus the cost of inferences on the test set). Untrain on a subset, measure, then restore the model to checkpoint before untraining on the next subset until it's unseen everything once. This one is hilariously naive but maybe just dumb enough to work.
 
 Food you buy in a store usually comes with a label for Nutrition Facts: how many calories, how much sodium, protein, niacin it has. In this world, datasets would have labels showing how much they contribute to model performance on various tasks. We would talk about information-rich datasets the way we talk about spinach being high in fiber.
 
@@ -67,15 +67,17 @@ What would the world look like if datasets had reliable nutrition facts, and mod
 2. The pace of development for large data-constrained ML models is accelerated. Profits for large model providers go up as the pie grows even though they pay out much of their new income to data providers.
 3. Compute-constrained models benefit from the nutrition fact labels as it's easier to know what to train them on.
 
-And some other consequences that make the picture less rosy:
+There are also some challenges:
 
-4. Whatever method we choose for measuring data nutrition will be heavily analyzed and gamed. An arms race will develop as it's only a matter of time before each imperfect metric gets [Goodharted](https://en.wikipedia.org/wiki/Goodhart%27s_law) to death. Some model providers may keep their valuation methods secret to prevent this, publishing only their total payouts or not even that.
-
-Developing accurate, cheap methods for measuring data nutrition would induce the big tech companies to spend more data on purely selfish grounds. They already do this (Meta spends tens of millions each year paying people to label Facebook posts even aside from the ego4d stuff; Google has us all doing Captchas all the time; OpenAI pays Turkers to help with their reinforcement learning projects). This would be more incentive for them to do more of what they're already going.
+1. Enforcement
 
 The legal system could be brought to bear, mandating the payment of "data royalties". This would have a strong stimulative effect on data production but would be difficult to enforce. In particular, model distillation (the training of one model on the outputs of another model) presents a problem for enforcement, as this occludes the value of whatever data was used to train the original model. The bet would be that the biggest companies are both the most important targets and the easiest targets.
 
 One strategy for enforcement would be for dataset owners to spot-check generative language models with prompts from their dataset. If the model has "memorized" the continuation, returning the ground truth with high confidence, that's evidence the model saw it during training. This is a sort of white-hat version of getting GPT-2 to [divulge people's phone numbers](https://bair.berkeley.edu/blog/2020/12/20/lmmem/). Instead of extracting people's personal information from the model, you'd extract the model's information from itself.
+
+2. [Goodhart](https://en.wikipedia.org/wiki/Goodhart%27s_law)
+
+Whatever method we choose for measuring data nutrition will be heavily analyzed and gamed. An arms race will develop as people find new loopholes in the measurement system. Some model providers may keep their valuation methods secret to prevent this, as Google keeps its ranking algorithm private to stop shady SEO tactics, publishing only their total payouts or not even that.
 
 
 ## Notes
