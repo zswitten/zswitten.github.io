@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data as an Undersupplied Public Good"
+title:  "Data is a Public Good"
 date:   2022-04-14 00:40:04 -0700
 ---
 
