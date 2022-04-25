@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Data is a Public Good: Solving the Data Shortfall"
+title:  "Data is a Public Good"
 date:   2022-04-24 00:40:04 -0700
 ---
 
 ## Summary
 The most valuable data in the world is public. Like most public goods, data is grotesquely underfunded. To fix this, we need to start measuring how much data is worth, and make the consumers pay the producers.
 
-## Data is a public good
+## The Data Commons
 
 The biggest, coolest, most important models of today are all free-riding off the public commons.
 
