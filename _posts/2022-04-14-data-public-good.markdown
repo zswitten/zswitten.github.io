@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Data is a Public Good"
-date:   2022-04-14 00:40:04 -0700
+title:  "Data is a Public Good: Solving the Data Shortfall"
+date:   2022-04-24 00:40:04 -0700
 ---
 
 ## Summary
