@@ -5,79 +5,69 @@ date:   2022-04-14 00:40:04 -0700
 ---
 
 ## Summary
-The most valuable data in the world is public. Stuff like Wikipedia and Github. Like all public goods, data is therefore *underfunded*. The classic solution to a public goods problem is to subsidize production... but the value of data is hard to measure. Finding ways to measure the incremental effects of a dataset would let us reward dataset creators and unlock massive value.
+The most valuable data in the world is public. Like most public goods, data is grotesquely underfunded. To fix this, we need to start measuring how much data is worth, and make the consumers pay the producers.
 
-## Data as a public good
-**The best things in life are free**
+## Data is a public good
 
-What makes data valuable? Data is valuable because it makes an ML model do better on some task. For private data, this can be estimated by companys' willingness to pay. For instance, your browsing/shopping habits are [allegedly](https://www.invisibly.com/learn-blog/how-much-is-data-worth) worth about $65/year/person because they improve the performance of a what-ads-are-worth-showing-to-you model.
+The biggest, coolest, most important models of today are all free-riding off the public commons.
 
-But these days most valuable data in the world, the data that powers the biggest, best, models, is *completely public*.
+- [OpenAI Codex](https://openai.com/blog/openai-codex/), which powers [Copilot](https://copilot.github.com/), is trained on publicly available source code from Github.
+- [Alphafold](https://www.deepmind.com/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology) is trained on the [Protein Data Bank](https://www.rcsb.org/).
+- [GPT-3](https://arxiv.org/abs/2005.14165) is [trained](https://en.wikipedia.org/wiki/GPT-3#Training_and_capabilities) on text from Common Crawl, Reddit, Wikipedia, and a bunch of books.
+- [DALL-E 2](https://openai.com/dall-e-2/), the new AI art generating hotness at time of this writing, is trained on pairs of images and their alt-texts/captions scraped from Wikipedia and elsewhere.
 
-- [OpenAI Codex](https://openai.com/blog/openai-codex/), which powers [Copilot](https://copilot.github.com/), is trained on publicly available source code from Github. Codex can already [write video games](https://andrewmayneblog.wordpress.com/2022/03/17/building-games-and-apps-entirely-through-natural-language-using-openais-davinci-code-model/) essentially from scratch and already has many devotees who say it makes their work faster and better.
-- [Alphafold](https://www.deepmind.com/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology), which can replicate an entire PhD's worth of work finding the structure of a protein with one inference call, is trained on publicly available data from the [Protein Data Bank](https://www.rcsb.org/).
-- [GPT-3](), OpenAI's language model that blew everyone away in 2020 with its ability to do style transfer, open-ended dialogues, and FILLMEIN, was [trained](https://en.wikipedia.org/wiki/GPT-3#Training_and_capabilities) on Common Crawl, Reddit, Wikipedia, and a bunch of books. Again, public domain.
-- DALL-E 2, the new AI art generating hotness at time of this writing, is [trained](https://arxiv.org/pdf/2102.12092.pdf) (see Appendix C; this is for DALL-E 1 but in the [paper](https://cdn.openai.com/papers/dall-e-2.pdf) for 2 they say they used the same data) on a combination of [Conceptual Captions](https://ai.google.com/research/ConceptualCaptions/), which is made of up pairs of images and their alt-text, and images from Wikipedia along with their captions.
+As big as these datasets might seem, they're nothing compared to how big they could be. The world has 1.4 billion English speakers. At 1k words/person/day, that's 368 English Wikipedias (3.8 billion words) a day.
 
-GPT-3 and Copilot are already earning income, gating access to their models through a paid API. AlphaFold and DALL-E haven't directly made anyone money yet as far as I know, but it's a mortal lock that AlphaFold or its successor will speed up the process of finding boutique molecules to cure diseases and help insert DNA into our genome, and artists are shook about DALL-E hitting their pocketbook which is a good sign for art consumers.
+The [Conceptual Captions dataset](https://ai.google.com/research/ConceptualCaptions/) DALL-E uses has 3.3 million annotated images. If just 1% of the human race (10 million people) got paid to go around with cameras strapped to our heads going "full-sized Ikea bed... Crest toothpaste... stationary bicycle... slightly underripe banana" out loud, we could easily generate dozens of Conceptual-Captions-sized datasets an hour. 
 
-Wikipedia isn't going to see a penny of that, though, unless their yearly donation pledge headers happen to catch Sam Altman in a generous mood. But of course it's not only Wikipedia the organization who is providing the value here. A lot (most?) of the value of Wikipedia qua dataset was created by the people who wrote the entries.
+Would this data still be valuable if we had way more of it? We would face diminishing marginal returns for sure, but the [scaling laws](https://www.gwern.net/Scaling-hypothesis) are telling us that training bigger models on more data will keep paying dividends for a while.
 
-Because of this lack of ownership and attribution, economic theory tells us that large public datasets are *massively underproduced*. To produce the socially optimal amount of data, every time you write a Wikipedia entry or write an answer on Stack Overflow, you should earn royalties equal to the expected improvement of all the models trained on what you wrote, multiplied by the value of that improvement to all the users of those models.
+GPT-3 and Copilot are already bringing in cash via gated access to an API. Artists are shook about DALL-E shrinking their margins. AlphaFold or its successor is a mortal lock to help scientists create boutique billion-dollar molecules to cure diseases and insert DNA into our genome.
 
-Recently Facebook paid 931 people to [record video](https://ego4d-data.org/) of themselves going about their daily lives, ending up with 3,670 hours of video, which was then painstakingly annotated with details about what they were doing, who was talking to/looking at them, what everyone was saying, bounding boxes for hands (hands always trip up generative art models for some reason), etc. This is the exact kind of thing we need more of... but honestly, 4k hours of video is still small potatoes! 
+The problem is, none of this money is going to the people who make the datasets. Because of this, economic theory tells us that large public datasets are *massively underproduced*. All the good stuff that's coming could come much faster. To get the socially optimal amount of data, every Wikipedia entry author should earn royalties equal to the expected improvement of all the models from that one entry, multiplied by the value of that improvement to all the users of those models.
 
-A nice side benefit of fully and completely rewarding people for contributing to the data commons would be the prompt decimation of unemployment. Almost anyone in the world is capable of strapping a video to their head and narrating their actions as they walk around, and the present and future benefits to AI more than pay for the cost of their time and shipping them the equipment.
-
-Aside from being underproduced, data is also tragically *undershared*. I know a biologist who's into ML who got fed up with trying to get the data in a paper by email and wrote an image-processing script to scrape it directly from the pixels of the tables in the PDF. In general academics have little incentive to share their data. It can be a lot of work and there's not much in it for them. People talk about this in terms of the "replication crisis" but it also slows down new work.
+Aside from being underproduced, data is also tragically *undershared*. I know a biologist who's into ML who got fed up with trying to get the data in a paper by email and wrote an image-processing script to scrape it directly from the pixels of the tables in the PDF. In general, sharing data is a lot of work and academics have very little incentive to do it. People talk about this in terms of the "replication crisis", but it also slows down cross-pollination of ideas and methods.
 
 The creators of ImageNet [almost gave up](https://qz.com/1034972/the-data-that-changed-the-direction-of-ai-research-and-possibly-the-world/) because they didn't have the budget to pay undergrads to label it. Only the existence of Amazon Mechanical Turk allowed the project to be completed. In retrospect, given how much ImageNet galvanized the field of computer vision, it clearly would have been worth creating ImageNet even if the professors had to label it all themselves. Imagine if someone had the foresight to subsidize its creation earlier.
 
-From large unsupervised datasets to smaller hyperspecialized datasets, it's clear that for all the talk about big data, we actually have significantly less data than we "should". Solving this problem is difficult, because not all data is created equal. For example, it's easy to create a massive, valueless, dataset by telling your computer to print out a bunch of zeroes and ones in a random order. Or to record hundreds of hours of video of your motionless couch. If we are going to scale up dataset creation in a big way, we need ways to measure the value of what we incentivize and create. The next section will talk about how we might do that.
+From large unsupervised datasets to smaller hyperspecialized datasets, it's clear that for all the talk about big data, we actually have significantly less data than we ought to if we lined up the incentives right. There are two main hurdles to solving this problem:
+1. Measurement. How do we know how much a datapoint/dataset is worth?
+2. Enforcement. How can we make sure that people pay for the data they use and eliminate the free rider problem?
 
-## Measuring the impact of a dataset
-**Your calorie values may be higher or lower depending on your data needs**
+If we solve these two problems, we can massively speed up the pace of machine learning discovery and deployment. As a neat side effect, we'll also decimate unemployment. Almost anyone in the world is capable of strapping a video to their head and narrating their actions as they walk around, and the present and future benefits to AI more than pay for the cost of their time and shipping them the equipment.
 
-How should we think about the value of an individual Wikipedia entry, or of the Wikipedia corpus as a whole?
+## Measurement
 
-Machine learning does have a tool for measuring the impact of a dataset: [ablation](https://en.wikipedia.org/wiki/Ablation_(artificial_intelligence). AKA taking out the dataset, training the model, and then comparing performance. As Wikipedia helpfully reminds us, there's an analogy with biological studies where they take out some portion of a fruit fly's brain and see if it still flies.
+How should we think about the value of an individual Wikipedia entry, or of the Wikipedia corpus as a whole? 
 
-The catch is that these models cost millions of dollars to train. And as long as the [scaling laws](https://www.gwern.net/Scaling-hypothesis) keep holding, they're only going to get more expensive over time. It's tough enough to make the argument for OpenAI to do full retrains of GPT-3-minus-Wikipedia, GPT-3-minus-Reddit, ..., and of course GPT-3-minus-wikieditorxyz's-contributions for all wiki editors would be prohibitively expensive.
+"Pay by the datapoint" doesn't cut it. It's easy to create a massive, valueless, dataset by splicing together hundreds of hours of video of your motionless couch. If we are going to scale up dataset creation in a big way, we need ways to measure the value of what we incentivize and create.
 
-There is another problem as well: even if we could perfectly measure the contribution of each Wikipedia entry to model performance on the training set, the connection between training performance and real-world value seems to be highly nonlinear and hard to predict. We don't know the magical threshold for accuracy in predicting the next token in a sequence that will enable Copilot to write code fluently and to-spec in a way that makes software engineers as shook as artists.
+Machine learning has a classic tool for measuring the impact of a dataset: ablation. The catch is that the models that produce most of the value cost tens of millions of dollars (and rising) to train. It's tough enough to make the argument for OpenAI to do full retrains of GPT-3-minus-Wikipedia, GPT-3-minus-Reddit, etc., and of course GPT-3-minus-wikieditorxyz's-contributions for all wiki editors would be prohibitively expensive.
 
-I'd argue that the uncertainty of that translation can be ignored as a form of "ML luck" akin to "moral luck" -- if the magical perplexity threshold is 50, your data brings it halfway from 60 to 50, and then later mine brings it the other half, and causes a phase change, we both deserve the same reward.
-
-Let's leave that complication aside and pretend that test set impact = real world impact. Here's three possible strategies to approximate the impact of a given subset of data.
+Here are three possible strategies to approximate the impact of a given subset of data.
 
 1. Do ablations with small versions of the model. Hopefully data valuable to small versions would also be valuable to big versions. We could build confidence in this via scaling laws: correlation between contribution to 1e9-scale GPT, 1e8-scale GPT, and 1e7-scale GPT would give us confidence that the same data would be valuable to full-scale GPT.
 
 2. Model it directly. Amass a dataset where the samples are [dataset, supplemental data] pairs, and the labels are the improvement of a model (or a menagerie of models) when trained on [dataset + supplemental data] compared to [dataset] alone. Or, rather than (dataset, supplemental pair), you could use (parametrized model, supplemental dataset), and the label would be the improvement in performance for that specific model.
 
-3. "Untrain" the model on the data using gradient ascent. It makes intuitive sense that moving away from good performance on important data would hurt performance more than for unimportant data. A nice feature of this approach is that the cost is exactly 2x the cost of training (plus the cost of inferences on the test set). Untrain on a subset, measure, then restore the model to checkpoint before untraining on the next subset until it's unseen everything once. This one is hilariously naive but maybe just dumb enough to work.
+3. "Untrain" the model on the data using gradient ascent. It makes intuitive sense that moving away from good performance on important data would hurt performance more than for unimportant data. A nice feature of this approach is that the cost is exactly 2x the cost of training (plus the cost of inferences on the test set). Untrain on a subset, measure, then restore the model to checkpoint before untraining on the next subset until it's unseen everything once. This one sounds kinda dumb but may be just dumb enough to work.
 
-Food you buy in a store usually comes with a label for Nutrition Facts: how many calories, how much sodium, protein, niacin it has. In this world, datasets would have labels showing how much they contribute to model performance on various tasks. We would talk about information-rich datasets the way we talk about spinach being high in fiber.
+Food you buy in a store usually comes with a label for Nutrition Facts: how many calories, how much sodium, protein, niacin it has. In this world, datasets would have labels showing how much they contribute to model performance on various tasks. We would talk about information-rich datasets the way we talk about spinach being high in fiber.[^1]
 
-## Solving the data shortage
-**Hm maybe that would have made a clickbaitier/catchier title**
+Whatever method we choose for measuring data nutrition will be heavily analyzed and gamed/[Goodharted](https://en.wikipedia.org/wiki/Goodhart%27s_law). An arms race will develop as people find new loopholes in the measurement system. Some model providers may keep their valuation methods secret to prevent this, as Google keeps its ranking algorithm private to stop shady SEO tactics.
 
-What would the world look like if datasets had reliable nutrition facts, and model providers like OpenAI paid out royalties to data providers each time they served an inference proportional to the nutrition of the data?
+## Enforcement
 
-1. Data labeling, along with scraping and other creative forms of data acquisition, become more lucrative and high-status.
-2. The pace of development for large data-constrained ML models is accelerated. Profits for large model providers go up as the pie grows even though they pay out much of their new income to data providers.
-3. Compute-constrained models benefit from the nutrition fact labels as it's easier to know what to train them on.
+Having determined how much a dataset is worth, how do we make its consumers pay its producers that amount?
 
-There are also some challenges:
+Vanilla copyright law can form the basis of the solution. Model producers charge model consumers a fee per API call; we would mandate the payment of "data royalties" as a percentage of these fees. Illicit resale of data could become an issue, but it's not that different in principle from regular IP theft.
 
-- Enforcement
+Model distillation (training one model on the outputs of another model) could allow bad actors to get the benefits of a dataset without explicitly training on it. "Data laundering", you could call it. To fight this, dataset owners could audit generative language models by prompting them with examples from their dataset. If the model has "memorized" the continuation, returning the true continuation with unusually high confidence, that's evidence the model saw it during training. This is a sort of white-hat version of getting GPT-2 to [divulge people's phone numbers](https://bair.berkeley.edu/blog/2020/12/20/lmmem/). Instead of extracting people's personal information from the model, you'd extract the model's information from itself.
 
-The legal system could be brought to bear, mandating the payment of "data royalties". This would have a strong stimulative effect on data production but would be difficult to enforce. In particular, model distillation (the training of one model on the outputs of another model) presents a problem for enforcement, as this occludes the value of whatever data was used to train the original model. The bet would be that the biggest companies are both the most important targets and the easiest targets.
 
-One strategy for enforcement would be for dataset owners to spot-check generative language models with prompts from their dataset. If the model has "memorized" the continuation, returning the ground truth with high confidence, that's evidence the model saw it during training. This is a sort of white-hat version of getting GPT-2 to [divulge people's phone numbers](https://bair.berkeley.edu/blog/2020/12/20/lmmem/). Instead of extracting people's personal information from the model, you'd extract the model's information from itself.
+[^1]: There is another possible issue: even if we could perfectly measure the contribution of each Wikipedia entry to model performance on the training set, the connection between training performance and real-world value seems to be highly nonlinear and hard to predict. We don't know the magical threshold for accuracy in predicting the next token in a sequence that will enable Copilot to write code fluently and to-spec in a way that makes software engineers as shook as artists.
 
-- [Goodhart](https://en.wikipedia.org/wiki/Goodhart%27s_law)
-
-Whatever method we choose for measuring data nutrition will be heavily analyzed and gamed. An arms race will develop as people find new loopholes in the measurement system. Some model providers may keep their valuation methods secret to prevent this, as Google keeps its ranking algorithm private to stop shady SEO tactics, publishing only their total payouts or not even that.
+I'd argue that we can ignore this issue by treating the uncertainty of that translation can be ignored as a form of "ML luck" akin to ["moral luck"](https://en.wikipedia.org/wiki/Moral_luck). Say the magical perplexity threshold is 50, your data brings it from 60 to 55, and then later mine brings it from 55 down to 50 and causes a phase change. I'd say we both deserve the same reward if swapping the order we published our datasets doesn't change the final result.
 
 
 ## Notes
@@ -86,4 +76,4 @@ Whatever method we choose for measuring data nutrition will be heavily analyzed 
 - [Chinchilla paper](https://arxiv.org/pdf/2203.15556.pdf), showing that at current margins models benefit more from extra data than extra size
 - Andrew Ng: "So for many practical applications, it’s now more productive to hold the neural network architecture fixed, and instead find ways to improve the data... This is the time to take the things that some individuals have been doing intuitively and make it a systematic engineering discipline." [Link](https://spectrum.ieee.org/andrew-ng-data-centric-ai)
 - Andrej Karpathy [blogpost](https://karpathy.github.io/2022/03/14/lecun1989/) on 33 years of progress in ML. Predictions for 2055: "2055 neural nets are basically the same as 2022 neural nets on the macro level, except bigger. Our datasets and models today look like a joke. Both are somewhere around 10,000,000X larger." Models can get bigger off Moore's law but where does the 10,000,000x increase in data come from?
-- I definitely didn't invent the data as a public good formulation. In fact I happened to read Anthropic's [latest paper](https://arxiv.org/pdf/2204.05862.pdf) using the phrase while I was editing this essay. Not sure if other people have connected this to public goods being undersupplied. It's kind of hard to Google because of people talking about data FOR public good.
+- I definitely didn't invent the data = public good formulation. In fact I happened to read Anthropic's [latest paper](https://arxiv.org/pdf/2204.05862.pdf) using the phrase while I was editing this essay. Not sure if other people have connected this to public goods being undersupplied. It's kind of hard to Google because of people talking about data FOR public good.
