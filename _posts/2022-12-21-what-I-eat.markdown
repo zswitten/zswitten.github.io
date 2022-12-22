@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "What/How I Eat"
+title:  ""
 date:   2022-12-21 23:00:00 -0700
 ---
 
@@ -8,33 +8,37 @@ I have a relatively unusual diet and people ask me about it a lot, so I figured 
 
 ## TABLE OF CONTENTS
 
-1. What I Eat 
-2. A Typical Day
-3. Food Philosophy
-4. FAQ
+[What I Eat](#what-i-eat) 
+[A Typical Day](#a-typical-day)
+[Food Philosophy](#food-philosophy)
+[FAQ](#faq)
 
-1. What I Eat
+## What I Eat
 
-***Things I eat almost every day***
+**Things I eat almost every day**
+
 Yogurt, pecan/walnut, blueberry, egg, avocado, spinach, tomato, mushroom, tortilla, orange, apple, banana
 
-***Other things I eat often***
+**Other things I eat often**
+
 Carrots, hummus, black beans, green beans, tofu, salmon, brown rice, onion, zucchini, chickpeas, bell peppers, broccoli, cauliflower, barley, eggplant, garlic, cucumber, mango
 
-***Things I Wish I Liked But Don't***
+**Things I Wish I Liked But Don't**
+
 Beets, pickles, brussels sprouts, radishes. Bitter veg basically.
 
-***Things I Wish I Didn't Like But Do***
+**Things I Wish I Didn't Like But Do**
+
 Bread
 
-2. A Typical Day
+## A Typical Day
 Pre-breakfast/right when I wake up: banana
 Breakfast: Yogurt with blueberries and either pecans or walnuts (I alternate; pecans are tastier/sweeter but walnuts are cheaper). God I love this combination of foods.
 Lunch: Egg sandwich on a whole wheat tortilla with avocado, tomato, mushroom, and spinach. Lately I started adding cucumber sometimes. I cook this 6-7 times a week and have gotten super-efficient. Usually I cook the vegetables together, but if I want to save time I skip the mushrooms, cook the spinach with the eggs, and eat the tomato raw. I top it off with a piece of fruit.
 Snack: Carrots and hummus
 Dinner: If I'm cooking, it's salmon with zucchini and bell pepper (I cook two meals' worth at a time). If my wife's cooking, it's whatever carb/protein/veg grab bag she's in the mood for from the "other things I eat often" list above. She loves onion so that's probably the most common thing on the "eat often" list. Top off with fruit again.
 
-3. Food Philosophy
+## Food Philosophy
 
 I got 95% of my food philosophy from Michael Pollan's "In Defense of Food". His main points are:
 1. You should eat things your grandmother (great-grandmother at this point) would recognize as food, and not eat things she wouldn't.
@@ -46,7 +50,7 @@ He suggests the heuristic of "Buy things that are sold around the edges of the g
 - Don't buy things that are trademarked
 - Don't buy things with lots of ingredients. Ideally you're buying singular objects that don't even have to have a list.
 
-4. FAQ
+## FAQ
 
 Q: How do you season your food?
 A: I cook with olive oil. Other than that, I... don't. I figure adding salt puts people on a hedonic treadmill where food tastes bland to them without it, so why bother starting down that road? As for spices, mostly I either find them overwhelming (e.g. poblanos, chili flakes) or undetectable, so I don't bother adding them myself, but my wife likes to add cumin, paprika, oregano, and maybe a few others I forget.
