@@ -36,7 +36,7 @@ Bread
 
 ## Food Philosophy
 
-I got 95% of my food philosophy from Michael Pollan's "In Defense of Food". His main points are:
+I got my whole food philosophy from Michael Pollan's "In Defense of Food". His main points are:
 - You should eat things your grandmother (great-grandmother at this point) would recognize as food, and not eat things she wouldn't.
 - Nutritional science is constantly flip-flopping and you can safely ignore it. No need to stress out about individual vitamins or micronutrients.
 - Fruits and veggies are good.
