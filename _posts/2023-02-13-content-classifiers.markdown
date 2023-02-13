@@ -44,5 +44,9 @@ User features are not a panacea. For one thing, people can open multiple account
 
 But user features can make a huge difference, and when the risks of misused models get more dangerous, it would be foolish to fight with one hand tied behind our backs.
 
+---
+
+**Footnotes**
+
 [^1]: I've theorized they actually use a funnel, with a light-weight classifier that runs on all posts and a heavier classifier that only runs when the light-weight one throws an alarm.
 [^2]: It's unclear to me whether this is an external prompt-analyzing system, or whether it's going on inside the LLM.
