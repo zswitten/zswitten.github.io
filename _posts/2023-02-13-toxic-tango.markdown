@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Content is "
+title:  "It Takes Two to Toxic Tango: Why Content Classifiers Can't Go It Alone"
 date:   2023-02-13 13:10:00 -0700
 ---
 Take it from a soldier on the front lines of the war on bad posts: You can't catch all the bad posts just by reading them. You need to look at who's making the posts.
