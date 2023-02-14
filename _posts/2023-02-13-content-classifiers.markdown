@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Content Classifiers Can't Do It On Their Own"
+title:  "Content is "
 date:   2023-02-13 13:10:00 -0700
 ---
 Take it from a soldier on the front lines of the war on bad posts: You can't catch all the bad posts just by reading them. You need to look at who's making the posts.
@@ -15,7 +15,7 @@ Bottom line, your enemies are too clever and too motivated. If you shut down the
 
 So what are you supposed to do? The best and simplest strategy, something you can always fall back on, is to say "Hey, that person who was posting a lot of nudity before? They're probably still posting a lot of nudity." Having a, call it a mischievousness index for your users gives you a huge leg up when they repeatedly try to get around your filters. I'm not saying to totally lock out repeat offenders. People change. But you can certainly use user-level features in combination with content-level features to make your classifier more resilient.
 
-Now let's talk LLMs. OpenAI has a classifier[^1] that looks at ChatGPT's outputs and effectively says either "Yup this is OK", or "This is bad". If it's bad enough, they write an orange warning to the screen. There also seems to be some system[^2] that looks at prompts and says "Nope, not touching this one, it's going to make me write a bad post", at which point the model backs out of its normal text-completion behavior and spits out boilerplate about how it's only allowed to make good posts, not bad ones.
+Now let's talk LLMs. OpenAI has a classifier[^1] that looks at ChatGPT's outputs and effectively says either "Yup this is OK", or "This is bad". If it's bad enough, they write an orange warning to the screen. There's also some system[^2] within ChatGPT that looks at prompts and says "Nope, not touching this one, it's going to make me write a bad post", at which point the model backs out of its normal text-completion behavior and spits out boilerplate about how it's only allowed to make good posts, not bad ones.
 
 Way back in November [two years ago in machine learning time], [a lot of people](https://twitter.com/zswitten/status/1598380220943593472) had fun tricking and cajoling ChatGPT into saying bad things. I was among them. Like the endlessly adaptive nipple purveyors from the social media section, we were able to find many ways to cajole and coerce ChatGPT to make bad posts of all kinds. People found a dozen diverse hacks in the first week alone. Can these holes be plugged? Yes. Can future holes be preplugged? Doubtful. 
 
@@ -48,5 +48,7 @@ But user features can make a huge difference, and when the risks of misused mode
 
 **Footnotes**
 
-[^1]: I've theorized they actually use a funnel, with a light-weight classifier that runs on all posts and a heavier classifier that only runs when the light-weight one throws an alarm.
-[^2]: It's unclear to me whether this is an external prompt-analyzing system, or whether it's going on inside the LLM.
+[^1]: I've theorized they actually use a funnel, with a light-weight classifier that runs on all posts and a heavier classifier that only runs when the light-weight one throws an alarm. This is based on the fact that its output is slower and glitchier when it's giving questionable responses.
+[^2]: In this case, I'm not alluding to an external system, but to the computation going on inside ChatGPT itself! During the RL phase, ChatGPT was repeatedly discouraged from making toxic comments and rewarded for avoiding them, and without getting too metaphysical, it's clear that ChatGPT sometimes "decides" to play it safe.
+
+Something I didn't realize before I started writing this essay is this means that to exploit user features fully, you'd want to include some notion of consistent user personae during training.
