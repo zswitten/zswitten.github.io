@@ -9,10 +9,8 @@ LLM logprobs are a beautiful thing for researchers and hobbyists. You can use th
 
 Preventing the competitive disadvantage from the last use case is maybe the reason the GPT-4 API doesn't show its logprobs, where previous models did. People are understandably [disappointed](https://twitter.com/xuanalogue/status/1637302504349114370) by this. But do we need the API at all? What if we can get the logprobs... [just by asking](https://twitter.com/zswitten/status/1638700838813310976)?
 
-![logprobs1](/docs/assets/logprobs1.jpeg | width=100)
-![logprobs2](/docs/assets/logprobs2.jpg | width=100)
-<img src="/docs/assets/logprobs1.jpeg" width="200" height="100">
-<img src="/docs/assets/logprobs2.jpg" width="200" height="100">
+<img src="/docs/assets/logprobs1.jpeg" width="400" height="200">
+<img src="/docs/assets/logprobs2.jpg" width="400" height="200">
 
 With this promising example in hand, I decided to launch a more systematic investigation. Since we have logprobs for GPT-3.5, can we match those logprobs without using the parameter? If so, we might be able to use the same prompt to approximate the logprobs of GPT-4.
 
