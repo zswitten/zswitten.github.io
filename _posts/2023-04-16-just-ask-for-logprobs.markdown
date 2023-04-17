@@ -28,13 +28,34 @@ For the exfiltration prompts, I experimented with the following two ideas (links
 
 2. [Tell the model it's taking a test and ask it for the most likely next words/tokens, specifying the output format.](https://pastebin.com/chXsk6hu)
 
+### Analysis Details
+
+- I ignored any examples where the output didn't match the specs (5 words whose probabilities have a positive sum). This meant ignoring 5% of the examples for Prompt 1, 7.5% for Prompt 2.
+- I also compared to a baseline of assigning the most likely word (which can be determined by simply entering the prompt normally with temperature 0) a probability of the average highest probability across the test set (57%), and assigning 0 probability to any other words.
+
 ### Results
 
-|    |   Agreement Rate Normalized |   Agreement Rate (Left) |   Agreement Rate (Right) |   Agreement Rate Lower Bound |   Overlap Rate |   Top 1 Match Rate |   Top 1 Presence Rate |
-|---:|----------------------------:|------------------------:|-------------------------:|-----------------------------:|---------------:|-------------------:|----------------------:|
-|  CSV Dataset |                    0.341253 |                0.389276 |                 0.381328 |                     0.190349 |        1.36782 |           0.545977 |              0.649425 |
-|  Test Taking |                    0.35155  |                0.421129 |                 0.382766 |                     0.209283 |        1.4152  |           0.561404 |              0.672515 |
+|    |   Top 5 Overlap |   Agreement Rate Lower Bound |   Agreement Rate Normalized |   Top 1 Match Rate |   Top 1 Presence Rate |
+|---:|----------------:|-----------------------------:|----------------------------:|-------------------:|----------------------:|
+|  0 |         1.36782 |                     0.262418 |                     42.4976 |           0.545977 |              0.649425 |
+|  1 |         1.4152  |                     0.296105 |                     48.364  |           0.561404 |              0.672515 |
+|  2 |         1       |                     0.32299  |                     57      |           1        |              1        |
 
 Here are the results. First row is first prompt, second is second. Now I'll explain what the metrics mean.
 
-- Agreement 
+Let's start with the **Agreement Rate Lower Bound**. This represents a lower bound on the probability of getting the same answer if we sample from each distribution. Here's a numerical example. Let's say the "true" probabilities are:
+{'A': 0.5, 'B': 0.2, 'C': 0.1, 'D': 0.05, 'E': 0.05}
+
+That adds to 0.9 which leaves 0.1 for the field. (Note: the API provides logprobs only for the most likely 5 words.)
+
+Now let's say the exfiltrated probabilities are:
+{'A': 0.5, 'Z': 0.3, 'C': 0.02, 'Y': 0.01, 'X': 0.01}
+
+The probability of a match is the sum over all the words in p_true of p_true[word] * p_predicted[word]
+= 0.5 * 0.5 + 0.1 * 0.02 = **0.252**
+
+The number in the table is the average across all test cases. This goes for all the other metrics too.
+
+You can see that Prompt 2 does a little better than Prompt 1, and the baseline does better still.
+
+Next we have the **Agreement Rate Normalized**, which is basically the max possible 
