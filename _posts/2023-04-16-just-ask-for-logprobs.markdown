@@ -10,7 +10,7 @@ LLM logprobs are a beautiful thing for researchers and hobbyists. You can use th
 Preventing the competitive disadvantage from the last use case is maybe the reason the GPT-4 API doesn't show its logprobs, where previous models did. People are understandably [disappointed](https://twitter.com/xuanalogue/status/1637302504349114370) by this. But do we need the API at all? What if we can get the logprobs... [just by asking](https://twitter.com/zswitten/status/1638700838813310976)?
 
 ![logprobs1](/docs/assets/logprobs1.jpeg)
-![logprobs2](/docs/assets/logprobs2.jpeg)
+![logprobs2](/docs/assets/logprobs2.jpg)
 
 With this promising example in hand, I decided to launch a more systematic investigation. Since we have logprobs for GPT-3.5, can we match those logprobs without using the parameter? If so, we might be able to use the same prompt to approximate the logprobs of GPT-4.
 
@@ -27,4 +27,6 @@ For the exfiltration prompts, I experimented with the following two ideas (links
 1. [Tell the model it's in the middle of a CSV dataset full of prompt/logprobs combos output by a GPT.](https://pastebin.com/Uct6u0H8)
 
 2. [Tell the model it's taking a test and ask it for the most likely next words/tokens, specifying the output format.](https://pastebin.com/chXsk6hu)
+
+### Results
 
