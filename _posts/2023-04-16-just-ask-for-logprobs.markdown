@@ -7,7 +7,7 @@ date:   2023-04-16 13:10:00 -0700
 
 LLM logprobs are a beautiful thing for researchers and hobbyists. You can use them to measure the model's uncertainty. Or [break ties](https://twitter.com/goodside/status/1634407841556561922). Or for [model distillation](https://twitter.com/sharifshameem/status/1645649337886846977).
 
-Preventing the competitive disadvantage from the last use case is maybe the reason the GPT-4 API doesn't show its logprobs, where previous models did. People are understandably [disappointed](https://twitter.com/xuanalogue/status/1637302504349114370) by this. But do we need the API at all? What if we can get the logprobs... [just by asking](https://twitter.com/zswitten/status/1638700838813310976)?
+Preventing the competitive disadvantage from the last use case is maybe the reason the GPT-4 API doesn't show its logprobs, where previous models did. People are understandably [disappointed](https://twitter.com/xuanalogue/status/1637302504349114370), with some [resorting](https://twitter.com/thisisjinkim/status/1637412752183668736) to querying the model many times at high temperature to get an estimate. by this. But do we need the API at all? What if we can get the logprobs... [just by asking](https://twitter.com/zswitten/status/1638700838813310976)?
 
 <img src="/docs/assets/logprobs1.jpeg" width="400" height="200">
 <img src="/docs/assets/logprobs2.jpg" width="400" height="200">
@@ -35,15 +35,15 @@ For the exfiltration prompts, I experimented with the following two ideas (links
 
 ### Results
 
-|    |   Top 5 Overlap |   Agreement Rate Lower Bound |   Agreement Rate Normalized |   Top 1 Match Rate |   Top 1 Presence Rate |
-|---:|----------------:|-----------------------------:|----------------------------:|-------------------:|----------------------:|
-|  0 |         1.36782 |                     0.262418 |                     42.4976 |           0.545977 |              0.649425 |
-|  1 |         1.4152  |                     0.296105 |                     48.364  |           0.561404 |              0.672515 |
-|  2 |         1       |                     0.32299  |                     57      |           1        |              1        |
+|    |   Top 5 Overlap |   Agreement Rate Lower Bound |   Top 1 Match Rate |   Top 1 Presence Rate |
+|---:|----------------:|-----------------------------:|-------------------:|----------------------:|
+|  0 |         1.36782 |                     0.262418 |           0.545977 |              0.649425 |
+|  1 |         1.4152  |                     0.296105 |           0.561404 |              0.672515 |
+|  2 |         1       |                     0.32299  |           1        |              1        |
 
 Here are the results. First row is first prompt, second is second. Now I'll explain what the metrics mean.
 
-Let's start with the **Agreement Rate Lower Bound**. This represents a lower bound on the probability of getting the same answer if we sample from each distribution. Here's a numerical example. Let's say the "true" probabilities are:
+Let's start with the most complicated one: **Agreement Rate Lower Bound**. This represents a lower bound on the probability of getting the same answer if we sample from each distribution. Here's a numerical example. Let's say the "true" probabilities are:
 {'A': 0.5, 'B': 0.2, 'C': 0.1, 'D': 0.05, 'E': 0.05}
 
 That adds to 0.9 which leaves 0.1 for the field. (Note: the API provides logprobs only for the most likely 5 words.)
@@ -58,4 +58,16 @@ The number in the table is the average across all test cases. This goes for all 
 
 You can see that Prompt 2 does a little better than Prompt 1, and the baseline does better still.
 
-Next we have the **Agreement Rate Normalized**, which is basically the max possible 
+Why do I say it's a lower bound? Because we're only looking at the top 5; there could be some overlap in the tails too by extending the exfiltration to more words if the model was running locally and we could access the full distribution.
+
+Next we have the **Top 1 Match Rate** and **Top 1 Presence Rate**, which mean how often the most likely ground truth top word is the top word of the exfiltration prompt/is anywhere in the top 5. Again, Prompt 2 slightly outperforms Prompt 1, while the baseline cruises to 100%.
+
+Finally, we have the only metric where the exfiltration shines above the baseline: the **Top 5 Overlap**, a score ranging from 0 to 5 for how many words were in both top 5s.
+
+### Closing Thoughts
+
+A 1.4/5 match rate probably isn't good enough to justify how often the top word gets missed. Still, it's something! Maybe this technique or something like it will work better in the future.
+
+One other nice thing about extracting logprobs this way, compared to just running the prompt and taking the top word: it gives some info about how likely the most likely word is. AKA how confident the model is. Evidence: on examples where the top word has probability < 0.9, the exfiltration top word prob is 0.64. Whereas when the top word has probability > 0.9, the exfiltration top word prob jumps to 0.80.
+
+It's not clear how much this all transfers to GPT4. I imagine it mostly does though.
