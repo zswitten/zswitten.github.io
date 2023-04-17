@@ -30,3 +30,7 @@ For the exfiltration prompts, I experimented with the following two ideas (links
 
 ### Results
 
+|    |   Agreement Rate Normalized |   Agreement Rate (Left) |   Agreement Rate (Right) |   Agreement Rate Lower Bound |   Overlap Rate |   Top 1 Match Rate |   Top 1 Presence Rate |\n|---:|----------------------------:|------------------------:|-------------------------:|-----------------------------:|---------------:|-------------------:|----------------------:|\n|  0 |                    0.341253 |                0.389276 |                 0.381328 |                      1903.49 |        1.36782 |           0.545977 |              0.649425 |
+
+Here are the results. First row is first prompt, second is second. Now I'll explain what the metrics mean.
+
