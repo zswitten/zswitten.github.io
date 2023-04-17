@@ -9,8 +9,8 @@ LLM logprobs are a beautiful thing for researchers and hobbyists. You can use th
 
 Preventing the competitive disadvantage from the last use case is maybe the reason the GPT-4 API doesn't show its logprobs, where previous models did. People are understandably [disappointed](https://twitter.com/xuanalogue/status/1637302504349114370) by this. But do we need the API at all? What if we can get the logprobs... [just by asking](https://twitter.com/zswitten/status/1638700838813310976)?
 
-![logprobs1](/docs/assets/logprobs1.jpeg =250x250)
-![logprobs2](/docs/assets/logprobs2.jpg =250x250)
+![logprobs1](/docs/assets/logprobs1.jpeg | width=100)
+![logprobs2](/docs/assets/logprobs2.jpg | width=100)
 
 With this promising example in hand, I decided to launch a more systematic investigation. Since we have logprobs for GPT-3.5, can we match those logprobs without using the parameter? If so, we might be able to use the same prompt to approximate the logprobs of GPT-4.
 
@@ -32,8 +32,8 @@ For the exfiltration prompts, I experimented with the following two ideas (links
 
 |    |   Agreement Rate Normalized |   Agreement Rate (Left) |   Agreement Rate (Right) |   Agreement Rate Lower Bound |   Overlap Rate |   Top 1 Match Rate |   Top 1 Presence Rate |
 |---:|----------------------------:|------------------------:|-------------------------:|-----------------------------:|---------------:|-------------------:|----------------------:|
-|  0 |                    0.341253 |                0.389276 |                 0.381328 |                     0.190349 |        1.36782 |           0.545977 |              0.649425 |
-|  1 |                    0.35155  |                0.421129 |                 0.382766 |                     0.209283 |        1.4152  |           0.561404 |              0.672515 |
+|  CSV Dataset |                    0.341253 |                0.389276 |                 0.381328 |                     0.190349 |        1.36782 |           0.545977 |              0.649425 |
+|  Test Taking |                    0.35155  |                0.421129 |                 0.382766 |                     0.209283 |        1.4152  |           0.561404 |              0.672515 |
 
 Here are the results. First row is first prompt, second is second. Now I'll explain what the metrics mean.
 
