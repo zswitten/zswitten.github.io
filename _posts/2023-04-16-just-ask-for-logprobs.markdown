@@ -11,9 +11,9 @@ Preventing the competitive disadvantage from the last use case is maybe the reas
 
 <img src="https://github.com/zswitten/zswitten.github.io/blob/master/photos/logprobs1.jpeg" width=50% height=50%>
 <img src="https://github.com/zswitten/zswitten.github.io/blob/master/photos/logprobs2.jpeg" width=50% height=50%>
-![test1](/zswitten-github-io/assets/logprobs1.jpeg)
-![test2](/zswitten-github-io/assets/logprobs2.jpeg)
-![test](/zswitten-github-io/docs/assets/logprobs1.jpeg)
+![test1](../docs/assets/logprobs1.jpeg)
+![test2](/zswitten.github.io/assets/logprobs2.jpeg)
+![test](/zswitten.github.io/docs/assets/logprobs1.jpeg)
 ![](/zswitten-github-io/docs/assets/logprobs2.jpeg)
 
 I decided to see if I could estimate the logprobs of a previous model (GPT-3.5) by... asking for them, in English.
