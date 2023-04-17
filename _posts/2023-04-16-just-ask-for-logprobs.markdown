@@ -3,16 +3,17 @@ layout: post
 title:  "Just Ask For Logprobs"
 date:   2023-04-16 13:10:00 -0700
 ---
-# Just Ask for Logprobs?
 
 LLM logprobs are a beautiful thing for researchers and hobbyists. You can use them to measure the model's uncertainty. Or [break ties](https://twitter.com/goodside/status/1634407841556561922). Or for [model distillation](https://twitter.com/sharifshameem/status/1645649337886846977).
 
-Preventing the competitive disadvantage from the last use case is maybe the reason the GPT-4 API doesn't show its logprobs, where previous models did. People are understandably [disappointed](https://twitter.com/xuanalogue/status/1637302504349114370), with some [resorting](https://twitter.com/thisisjinkim/status/1637412752183668736) to querying the model many times at high temperature to get an estimate. by this. But do we need the API at all? What if we can get the logprobs... [just by asking](https://twitter.com/zswitten/status/1638700838813310976)?
+Preventing the competitive disadvantage from the last use case is maybe the reason the latest GPT model, GPT-4, keeps its logprobs shyly hidden. People are understandably [disappointed](https://twitter.com/xuanalogue/status/1637302504349114370) by this, with some [resorting](https://twitter.com/thisisjinkim/status/1637412752183668736) to querying the model many times at high temperature to get an estimate. But do we need the API at all? What if we can get the logprobs... [just by asking](https://twitter.com/zswitten/status/1638700838813310976)?
 
 <img src="/docs/assets/logprobs1.jpeg" width="400" height="200">
-<img src="/docs/assets/logprobs2.jpg" width="250" height="200">
+<img src="/docs/assets/logprobs2.jpg" width="250" height="250">
 
 With this promising example in hand, I decided to launch a more systematic investigation. Since we have logprobs for GPT-3.5, can we match those logprobs without using the parameter? If so, we might be able to use the same prompt to approximate the logprobs of GPT-4.
+
+Spoiler alert: it kind of worked but not really.
 
 ### Choosing Data
 
