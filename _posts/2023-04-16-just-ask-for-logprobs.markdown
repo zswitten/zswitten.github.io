@@ -72,3 +72,5 @@ A 1.4/5 match rate probably isn't good enough to justify how often the top word 
 One other nice thing about extracting logprobs this way, compared to just running the prompt and taking the top word: it gives some info about how likely the most likely word is. AKA how confident the model is. Evidence: on examples where the top word has probability < 0.9, the exfiltration top word prob is 0.64. Whereas when the top word has probability > 0.9, the exfiltration top word prob jumps to 0.80.
 
 It's not clear how much this all transfers to GPT4. I imagine it mostly does though.
+
+Code for reproducing this is available at the [Github repo](https://github.com/zswitten/logprobs_extraction.git).
