@@ -20,5 +20,5 @@ permalink: /about/
 
 **Misc**
 
-[One Third Blue](onethirdblue.wordpress.com)
+[One Third Blue](https://onethirdblue.wordpress.com)
 
